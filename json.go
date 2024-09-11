@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 )
 
-func respondWithJSON(w http.ResponseWriter, cide int, payload interface{}){
+func respondWithJSON(w http.ResponseWriter, code int, payload interface{}){
 	dat, err := json.Marshal(payload)
 
 	if err != nil {
@@ -16,6 +16,6 @@ func respondWithJSON(w http.ResponseWriter, cide int, payload interface{}){
 	}
 
 	w.Header().Add("Content-Type", "application/json")
-	w.WriteHeader(200)
+	w.WriteHeader(code)
 	w.Write(dat)
 }
