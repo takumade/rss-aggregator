@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -12,7 +11,6 @@ import (
 
 
 func main(){
-	fmt.Println("Hello world")
 
 	godotenv.Load(".env")
 	portString := os.Getenv("PORT")
@@ -28,9 +26,8 @@ func main(){
 		Addr: ":" + portString,
 	}
 
+	log.Printf("Server starting on port %v", portString)
 	err := srv.ListenAndServe()
-
-	fmt.Printf("Server starting on port %v", portString)
 
 	if err != nil {
 		log.Fatal(err)
