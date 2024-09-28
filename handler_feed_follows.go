@@ -13,13 +13,17 @@ import (
 func (apiCfg *apiConfig) handlerCreateFeedFollow(w http.ResponseWriter, r *http.Request, user database.User){
 	
 	type parameters struct {
-		FeedId uuid.UUID `json: "feed_id"`
+		FeedID uuid.UUID `json:"feed_id"`
 	}
 
 	decoder := json.NewDecoder(r.Body)
 
+	
+
 	params := parameters{}
 	err := decoder.Decode(&params)
+
+	fmt.Println(params.FeedID)
 
 	if err != nil {
 		responseWithError(w, 400, fmt.Sprintf("Error parsing JSON: %v", err))
@@ -30,7 +34,7 @@ func (apiCfg *apiConfig) handlerCreateFeedFollow(w http.ResponseWriter, r *http.
 		ID: uuid.New(),
 		CreatedAt: time.Now().UTC(),
 		UpdatedAt: time.Now().UTC(),
-		FeedID: params.FeedId,
+		FeedID: params.FeedID,
 		UserID: user.ID,
 	})
 
