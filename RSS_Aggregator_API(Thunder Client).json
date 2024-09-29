@@ -1,0 +1,140 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "RSS Aggregator",
+    "collectionId": "64ce0377-d76d-4367-b3ca-d7fd568c4140",
+    "dateExported": "2024-09-29T20:51:02.628Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "0a67b54e-fd9a-4c36-934c-2cb98f3c2756",
+            "colId": "64ce0377-d76d-4367-b3ca-d7fd568c4140",
+            "containerId": "",
+            "name": "Create user",
+            "url": "http://localhost:9999/v1/user",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-09-29T20:49:56.678Z",
+            "modified": "2024-09-29T20:49:56.679Z",
+            "headers": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Anya\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "f02ef2e7-d6ac-4813-b77c-e1379f875c66",
+            "colId": "64ce0377-d76d-4367-b3ca-d7fd568c4140",
+            "containerId": "",
+            "name": "Get Feeds",
+            "url": "http://localhost:9999/v1/feeds",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-09-29T20:50:07.161Z",
+            "modified": "2024-09-29T20:50:07.161Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 53d4c2207af88a0ca5ec8ec8956ff006a68d8b3c2037a86d6c55a85d8b2b145b"
+                }
+            ]
+        },
+        {
+            "_id": "34765fed-b10b-4ac0-bbdc-7bb6632598b8",
+            "colId": "64ce0377-d76d-4367-b3ca-d7fd568c4140",
+            "containerId": "",
+            "name": "Delete Feeds Follow",
+            "url": "http://localhost:9999/v1/feed_follows/ef7b5e97-7a4b-4ed6-a5ea-cea91f7c09b0",
+            "method": "DELETE",
+            "sortNum": 30000,
+            "created": "2024-09-29T20:50:18.394Z",
+            "modified": "2024-09-29T20:50:18.394Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 53d4c2207af88a0ca5ec8ec8956ff006a68d8b3c2037a86d6c55a85d8b2b145b"
+                }
+            ]
+        },
+        {
+            "_id": "446bcecf-8c48-4579-b681-a8b76826c237",
+            "colId": "64ce0377-d76d-4367-b3ca-d7fd568c4140",
+            "containerId": "",
+            "name": "Get User Posts",
+            "url": "http://localhost:9999/v1/posts",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-09-29T20:50:29.325Z",
+            "modified": "2024-09-29T20:50:29.325Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 53d4c2207af88a0ca5ec8ec8956ff006a68d8b3c2037a86d6c55a85d8b2b145b"
+                }
+            ]
+        },
+        {
+            "_id": "ad6317b4-fc5b-4a31-bf33-d8c3edfcbc3c",
+            "colId": "64ce0377-d76d-4367-b3ca-d7fd568c4140",
+            "containerId": "",
+            "name": "Get Feeds Follow",
+            "url": "http://localhost:9999/v1/feed_follows",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-09-29T20:50:36.907Z",
+            "modified": "2024-09-29T20:50:36.907Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 53d4c2207af88a0ca5ec8ec8956ff006a68d8b3c2037a86d6c55a85d8b2b145b"
+                }
+            ]
+        },
+        {
+            "_id": "3d5762a4-1cc6-415f-9ff5-159df301995c",
+            "colId": "64ce0377-d76d-4367-b3ca-d7fd568c4140",
+            "containerId": "",
+            "name": "Create Feeds Follow",
+            "url": "http://localhost:9999/v1/feed_follows",
+            "method": "POST",
+            "sortNum": 60000,
+            "created": "2024-09-29T20:50:47.250Z",
+            "modified": "2024-09-29T20:50:47.250Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 53d4c2207af88a0ca5ec8ec8956ff006a68d8b3c2037a86d6c55a85d8b2b145b"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"feed_id\": \"e9d8fd1a-2eb3-4981-be29-a576e45bece4\"\n}",
+                "form": []
+            }
+        },
+        {
+            "_id": "19e40d99-573a-4378-af0c-df604741007c",
+            "colId": "64ce0377-d76d-4367-b3ca-d7fd568c4140",
+            "containerId": "",
+            "name": "Create Feeds",
+            "url": "http://localhost:9999/v1/feeds",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2024-09-29T20:50:56.622Z",
+            "modified": "2024-09-29T20:50:56.622Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "ApiKey 53d4c2207af88a0ca5ec8ec8956ff006a68d8b3c2037a86d6c55a85d8b2b145b"
+                }
+            ],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"Wallas's Blog\",\n  \"url\": \"https://wallas.dev/index.xml\"\n}",
+                "form": []
+            }
+        }
+    ],
+    "ref": "q980ZDEhNsJYfSYNqRbH77Zuwr-jcNXCpfewIhBhf5bwITsPsC6seIHAC5iFu-2zCeFQGT7fqZ_RdEgPes21Cw"
+}
