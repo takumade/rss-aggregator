@@ -15,7 +15,7 @@ type RSSFeed struct {
 		Description string `xml:"description"`
 		Language   string `xml:"language"`
 		Item      []RSSItem `xml:"item"`
-	}
+	} `xml:"channel"`
 }
 
 
@@ -27,14 +27,14 @@ type RSSItem struct {
 }
 
 
-func urlToFeed(url string) (RSSFeed, error){
+func urlToFeed(url string) (*RSSFeed, error){
 	httpClient := http.Client{
 		Timeout: 10 * time.Second,
 	}
 
 	resp, err := httpClient.Get(url)
 	if err != nil {
-		return RSSFeed{}, err
+		return nil, err
 	}
 
 
@@ -42,13 +42,13 @@ func urlToFeed(url string) (RSSFeed, error){
 
 	dat, err := io.ReadAll(resp.Body)
 	if err != nil {
-		return RSSFeed{}, err
+		return nil, err
 	}
 
 	rssFeed := RSSFeed{}
 	xml.Unmarshal(dat, &rssFeed)
 
-	return rssFeed, nil
+	return &rssFeed, nil
 
 
 }
