@@ -61,6 +61,6 @@ func (apiCfg *apiConfig) handlerGetPostsForUser(w http.ResponseWriter, r *http.R
 		log.Printf("Error getting posts for user: %v", err)
 	}
 
-	respondWithJSON(w, 200, databaseUsertoUser((user)))
+	respondWithJSON(w, 200, databasePostsToPosts((posts)))
 
 }
