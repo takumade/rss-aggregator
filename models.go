@@ -121,3 +121,12 @@ func databasePostToPost(dbPost database.Post) Post {
 		FeedID: dbPost.FeedID,
 	}
 }
+
+func databasePostsToPosts(dbPosts []database.Post) []Post {
+	posts := []Post{}
+	for _, dbPost := range dbPosts {
+		posts = append(posts, databasePostToPost(dbPost))
+	}
+
+	return posts
+}
