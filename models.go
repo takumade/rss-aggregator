@@ -102,3 +102,22 @@ type Post struct {
 	Url         string         `json:"url"`
 	FeedID      uuid.UUID      `json:"feed_id"`
 }
+
+func databasePostToPost(dbPost database.Post) Post {
+	var description *string 
+
+	if dbPost.Description.Valid {
+		description = &dbPost.Description.String
+	}
+
+	return Post{
+		ID: dbPost.ID,
+		CreatedAt: dbPost.CreatedAt,
+		UpdatedAt: dbPost.UpdatedAt,
+		Title: dbPost.Title,
+		Description:description,
+		PublishedAt: dbPost.PublishedAt,
+		Url: dbPost.Url,
+		FeedID: dbPost.FeedID,
+	}
+}
