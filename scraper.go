@@ -25,7 +25,7 @@ func startScraping(
 		)
 
 		if err != nil {
-			log.Printf("Error getting feeds: ", err)
+			log.Println("Error getting feeds: ", err)
 			continue
 		}
 
@@ -61,7 +61,7 @@ func scrapeFeed(db *database.Queries, wg *sync.WaitGroup, feed database.Feed){
 	}
 
 	for _, item := range rssFeed.Channel.Item {
-		log.Println("Found Post: ", item.Title)
+		log.Println("Found Post: ", item.Title, "on feed: ", feed.Name)
 	}
 
 	log.Printf("Feed %s collected, %v posts found", feed.Name, len(rssFeed.Channel.Item))
